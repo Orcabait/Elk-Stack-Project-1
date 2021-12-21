@@ -258,9 +258,9 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 |`vim metricbeat-playbook.yml`                 |	write YAML file to install metricbeat on webservers
 
 ### Additional Resources 
-Much has been learned leading up the implementation of this ELK stack project. Below are some previous projects that served as a cornerstone for essential skills used in this project. Please note that UBUNTU and KALI distributions are used: 
+Much has been learned leading up the implementation of this ELK stack project. Below are some previous projects that served as a cornerstone for essential skills used in this project. Please note that UBUNTU and KALI distributions are used. 
 
-* [Bash and Terminal](./FoundationalProjects/Terminal and Bash HW.pdf)
+* [Bash and Terminal](./FoundationalProjects/)
 * [Linux Systems Administration](./FoundationalProjects/Linux Systems Admin HW Martin Quiroga.pdf)
 * [Linux Archiving and Logging Data](./FoundationalProjects/Martin Quiroga Week 5 Homework_Archiving and Logging Data.pdf) 
 * [Advanced Bash Techniques](./FoundationalProjects/Week 6_Bash_Martin Quiroga.pdf)
