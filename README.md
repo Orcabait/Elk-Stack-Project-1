@@ -92,41 +92,47 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 * In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 	+ Specify a group of machines
+	```yaml
 	- name: Install & Configure ELK with Docker
       hosts: elk
       remote_user: sysadmin
       become: true
       tasks:
-		
+	```	
 	+ Increase Virtual Memory
+	```yaml
 	- name: Utilize More Memory
       sysctl:
         name: vm.max_map_count
         value: 262144
         state: present
         reload: yes
-	
+	```
 	+ Install Docker.io
+	```yaml
 	- name: Install Docker.io
       apt:
         update_cache: yes
         name: docker.io
         state: present
-	
+	```
 	+ Install Python-pip
+	```yaml
 	 name: Install pip3
      apt:
       force_apt_get: yes
       name: python3-pip
       state: present
-	
+	```
 	+ Install Docker Python Module
+	```yaml
 	- name: Install Docker Python Module
       pip:
         name: docker
         state: present
-	
+	```
 	+ Download and Launch Elk Docker Container and make available ports
+	```yaml
 	 - name: Download and launch ELK container
        docker_container:
          name: ELK
@@ -137,13 +143,14 @@ The playbook implements the following tasks:
            - 5601:5601
            - 9200:9200
 		   - 5044:5044
-	
+	```
 	+ Enable Docker services to run 
+	```yaml
 	 - name: Enable my docker services
        systemd:
          name: docker
          enabled: yes
-	
+	```
 The following screenshot displays the result of running `docker ps -a` after successfully configuring the ELK instance.
 
 **Jump-Box**
@@ -193,22 +200,18 @@ SSH into the control node and follow the steps below:
 Answer the following questions to fill in the blanks:_
 
 * Which file is the playbook? Where do you copy it?_
-
  + For Ansible create [Initialization Playbook](./InitializationPlaybook.yml)
  + For Filebeat create [Filebeat Playbook](./FilebeatPlaybook.yml)
  + For Metricbeat create [Metricbeat Playbook](./MetricbeatPlaybook.yml) and copy it to...
  + /etc/ansible/
 
 * Which file do you update to make Ansible run the playbook on a specific machine? 
-
  + /etc/ansible/hosts file (IP of the Virtual Machines)
 
 * How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-
  + There are two separate groups. The first will be on webservers (Web-1, Web-2) in etc/ansible/hosts file where Filebeat will be installed. The second group is the Elk server (Elk-jumpMachine ) where the main ELK components will be installed.
 
 * Which URL do you navigate to in order to check that the ELK server is running?
-
  + http://20.110.181.202:5601//app/kibana
 
 
@@ -253,3 +256,14 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 |`vim filebeat-playbook.yml`                   |	write YAML file to install filebeat on webservers
 |`vim metricbeat-config.yml`                   |	create metricbeat config file and edit it
 |`vim metricbeat-playbook.yml`                 |	write YAML file to install metricbeat on webservers
+
+### Additional Resources 
+Much has been learned leading up the implementation of this ELK stack project. Below are some previous projects that served as a cornerstone for essential skills used in this project. Please note that UBUNTU and KALI distributions are used: 
+
+* [Bash and Terminal](./FoundationalProjects/Terminal and Bash HW.pdf)
+* [Linux Systems Administration](./FoundationalProjects/Linux Systems Admin HW Martin Quiroga.pdf)
+* [Linux Archiving and Logging Data](./FoundationalProjects/Martin Quiroga Week 5 Homework_Archiving and Logging Data.pdf) 
+* [Advanced Bash Techniques](./FoundationalProjects/Week 6_Bash_Martin Quiroga.pdf)
+* [Networking Fundamentals 1](./FoundationalProjects/Wk 8_Networking Fundamentals MQ.pdf)
+* [Networking Fundamentals 2](./FoundationalProjects/Networking Fundamentals 2_MQ.pdf)
+* [Network Security Fundamentals](./FoundationalProjects/Week 11_Network Security HW MQ.pdf)
