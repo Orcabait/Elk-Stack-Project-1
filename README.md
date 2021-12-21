@@ -6,14 +6,14 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml and config file may be used to install only certain pieces of it, such as Filebeat.
 
-* [Ansible Configuration (Text File)](./Elk-Stack-Project-1/Ansible_Config.txt)
-* [Ansible Initialization Playbook](./Elk-Stack-Project-1/Initialization_Playbook.yml)
-* [Hosts_file (Text File)](./Elk-Stack-Project-1/Hosts_File.txt)
-* [ELK Installation](./Elk-Stack-Project-1/ELK_Installation.txt)
-* [Filebeat Configuration (Text File)](Elk-Stack-Project-1/Filebeat_Config.txt)
-* [Filebeat Playbook](Elk-Stack-Project-1/Filebeat_Playbook.yml)
-* [Metricbeat Configuration (Text File)](Elk-Stack-Project-1/Metricbeat_Config.txt)
-* [Metricbeat Playbook](Elk-Stack-Project-1/Metricbeat_Playbook.yml)
+* [Ansible Configuration](./Elk-Stack-Project-1/AnsibleConfig.yml)
+* [Ansible Initialization Playbook](./Elk-Stack-Project-1/InitializationPlaybook.yml)
+* [Hosts_file](./Elk-Stack-Project-1/HostsFile.yml)
+* [ELK Installation](./Elk-Stack-Project-1/ELKInstallation.yml)
+* [Filebeat Configuration (Text File)](Elk-Stack-Project-1/FilebeatConfig.yml)
+* [Filebeat Playbook](Elk-Stack-Project-1/FilebeatPlaybook.yml)
+* [Metricbeat Configuration (Text File)](Elk-Stack-Project-1/MetricbeatConfig.yml)
+* [Metricbeat Playbook](Elk-Stack-Project-1/MetricbeatPlaybook.yml)
 
 This document contains the following details:
 * Description of the Topology
@@ -194,9 +194,9 @@ Answer the following questions to fill in the blanks:_
 
 * Which file is the playbook? Where do you copy it?_
 
- + For Ansible create [Initialization Playbook](./Elk-Stack-Project-1/Initialization_Playbook.yml)
- + For Filebeat create [Filebeat Playbook](Elk-Stack-Project-1/Filebeat_Playbook.yml)
- + For Metricbeat create [Metricbeat Playbook](Elk-Stack-Project-1/Metricbeat_Playbook.yml) and copy it to...
+ + For Ansible create [Initialization Playbook](./Elk-Stack-Project-1/InitializationPlaybook.yml)
+ + For Filebeat create [Filebeat Playbook](Elk-Stack-Project-1/FilebeatPlaybook.yml)
+ + For Metricbeat create [Metricbeat Playbook](Elk-Stack-Project-1/MetricbeatPlaybook.yml) and copy it to...
  + /etc/ansible/
 
 * Which file do you update to make Ansible run the playbook on a specific machine? 
