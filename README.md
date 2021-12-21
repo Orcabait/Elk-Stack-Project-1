@@ -266,4 +266,4 @@ Much has been learned leading up the implementation of this ELK stack project. B
 * [Advanced Bash Techniques](./FoundationalProjects/Week 6_Bash_Martin Quiroga.pdf)
 * [Networking Fundamentals 1](./FoundationalProjects/Wk 8_Networking Fundamentals MQ.pdf)
 * [Networking Fundamentals 2](./FoundationalProjects/Networking Fundamentals 2_MQ.pdf)
-* [Network Security Fundamentals](./FoundationalProjects/Week 11_Network Security HW MQ.pdf)
+* [Network Security Fundamentals]
