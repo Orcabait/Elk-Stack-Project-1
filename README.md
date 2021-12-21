@@ -2,18 +2,18 @@
 
 The files in this repository were used to configure the network depicted below.
 
-(Elk-Stack-Project-1/ELK_Diagram_MQ.drawio)
+(./Elk-Stack-Project-1/Pictures/theELKdiagram)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml and config file may be used to install only certain pieces of it, such as Filebeat.
 
-* [Initialization_Playbook](Elk-Stack-Project-1/Initialization_Playbook.txt)
-* [Hosts_file](Elk-Stack-Project-1/Hosts_file.txt)
-* [Ansible Configuration](Elk-Stack-Project-1/Ansible_Config.txt)
-* [Ansible ELK Installation](Elk-Stack-Project-1/ELK_Installation.txt)
-* [Filebeat Configuration](Elk-Stack-Project-1/Filebeat_Config.txt)
-* [Filebeat Playbook](Elk-Stack-Project-1/Filebeat_Playbook.txt)
-* [Metricbeat Configuration](Elk-Stack-Project-1/Metricbeat_Config.txt)
-* [Metricbeat Playbook](Elk-Stack-Project-1/Metricbeat_Playbook.txt)
+* [Ansible Configuration (Text File)](./Elk-Stack-Project-1/Ansible_Config.txt)
+* [Ansible Initialization Playbook](./Elk-Stack-Project-1/Initialization_Playbook.yml) ##Just specify the the working directory. Copy and paste the YAML files
+* [Hosts_file (Text File)](./Elk-Stack-Project-1/Hosts_File.txt)
+* [ELK Installation](./Elk-Stack-Project-1/ELK_Installation.txt)
+* [Filebeat Configuration (Text File)](Elk-Stack-Project-1/Filebeat_Config.txt)
+* [Filebeat Playbook](Elk-Stack-Project-1/Filebeat_Playbook.yml)
+* [Metricbeat Configuration (Text File)](Elk-Stack-Project-1/Metricbeat_Config.txt)
+* [Metricbeat Playbook](Elk-Stack-Project-1/Metricbeat_Playbook.yml)
 
 This document contains the following details:
 * Description of the Topology
@@ -64,13 +64,13 @@ Only the Jump-Box machine can accept connections from the Internet. Access to th
 
 Machines within the network can only be accessed by **Workstation and Jump-Box through SSH Jump-Box.**
 
-..* Which machine did you allow to access your ELK VM? 
+* Which machine did you allow to access your ELK VM? 
 
-**Jump-Box IP: 20.119.32.190 via SSH port 22** 
+ + **Jump-Box IP: 20.119.32.190 via SSH port 22** 
 
-..* What was its IP address?_
+* What was its IP address?_
 
-**My Workstation using MY Public IP via port TCP 5601**
+ + **My Workstation using MY Public IP via port TCP 5601**
 
 A summary of the access policies in place can be found in the table below.
 
@@ -84,64 +84,65 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-..* What is the main advantage of automating configuration with Ansible?_
 
-** Ansible allows you to quickly and easily (if you know YAML) to deploy several multi-tier applications through YAML based playbooks. 
+* What is the main advantage of automating configuration with Ansible?_
+
+ + **Ansible allows you to quickly and easily (if you know YAML) to deploy several multi-tier applications through YAML based playbooks.** 
 
 The playbook implements the following tasks:
 * In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 	+ Specify a group of machines
-	>- name: Install & Configure ELK with Docker
-     > hosts: elk
-      >remote_user: sysadmin
-      >become: true
-      >tasks:
+	- name: Install & Configure ELK with Docker
+      hosts: elk
+      remote_user: sysadmin
+      become: true
+      tasks:
 		
 	+ Increase Virtual Memory
-	>- name: Utilize More Memory
-    >  sysctl:
-    >    name: vm.max_map_count
-    >    value: 262144
-    >    state: present
-    >    reload: yes
+	- name: Utilize More Memory
+      sysctl:
+        name: vm.max_map_count
+        value: 262144
+        state: present
+        reload: yes
 	
 	+ Install Docker.io
-	>- name: Install Docker.io
-    >  apt:
-    >    update_cache: yes
-    >    name: docker.io
-    >    state: present
+	- name: Install Docker.io
+      apt:
+        update_cache: yes
+        name: docker.io
+        state: present
 	
 	+ Install Python-pip
-	> name: Install pip3
-    > apt:
-    >  force_apt_get: yes
-    >  name: python3-pip
-    >  state: present
+	 name: Install pip3
+     apt:
+      force_apt_get: yes
+      name: python3-pip
+      state: present
 	
 	+ Install Docker Python Module
-	>- name: Install Docker Python Module
-    >  pip:
-    >    name: docker
-    >    state: present
+	- name: Install Docker Python Module
+      pip:
+        name: docker
+        state: present
 	
 	+ Download and Launch Elk Docker Container and make available ports
-	> - name: Download and launch ELK container
-    >   docker_container:
-    >     name: ELK
-    >     image: sebp/elk:761
-    >     state: started
-    >     restart_policy: always
-    >     published_ports:
-    >       - 5601:5601
-    >       - 9200:9200
-	>	    - 5044:5044
+	 - name: Download and launch ELK container
+       docker_container:
+         name: ELK
+         image: sebp/elk:761
+         state: started
+         restart_policy: always
+         published_ports:
+           - 5601:5601
+           - 9200:9200
+		   - 5044:5044
 	
 	+ Enable Docker services to run 
-	> - name: Enable my docker services
-    >       systemd:
-    >         name: docker
-    >         enabled: yes
+	 - name: Enable my docker services
+       systemd:
+         name: docker
+         enabled: yes
 	
 The following screenshot displays the result of running `docker ps -a` after successfully configuring the ELK instance.
 
@@ -169,14 +170,14 @@ We have installed the following Beats on these machines:
 
 * Filebeat allows the collection of log files from very specific file collection softwares like Apache, Microsoft Azure tools and webservers.
 
- + [Filebeat Module Status Screenshot](Elk-Stack-Project-1/Filebeat-status.png)
+ + [Filebeat Module Status Screenshot](./Elk-Stack-Project-1/Pictures/Filebeat-status.png)
 
 * Metricbeat will be used to monitor VM stats, CPU core stats, filesystem stats, memory stats, and network stats.
 
- + [Metricbeat Module Status Screenshot](Elk-Stack-Project-1/Metricbeat-status.png)
-	+ [Metricbeat Dashboard](Elk-Stack-Project-1/Metricdash.png)
-	+ [Metricbeat CPU Statistics](Elk-Stack-Project-1/Metriccpu.png)
-	+ [Metricbeat Memory Statistics](Elk-Stack-Project-1/Metricmemory.png)
+ + [Metricbeat Module Status Screenshot](./Elk-Stack-Project-1/Pictures/Metricbeat-status.png)
+	+ [Metricbeat Dashboard](./Elk-Stack-Project-1/Pictures/Metricdash.png)
+	+ [Metricbeat CPU Statistics](./Elk-Stack-Project-1/Pictures/Metriccpu.png)
+	+ [Metricbeat Memory Statistics](./Elk-Stack-Project-1/Pictures/Metricmemory.png)
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -189,26 +190,26 @@ SSH into the control node and follow the steps below:
 - Update the **config** file to include **remote users and ports**
 - Run the playbook, and navigate to **Kibana using: ((Your ELK Machine IP Address):5601)** to check that the installation worked as expected.
 
-* Answer the following questions to fill in the blanks:_
+Answer the following questions to fill in the blanks:_
 
 * Which file is the playbook? Where do you copy it?_
 
-+ For Ansible create [Initialization Playbook](Elk-Stack-Project-1/Initialization_Playbook.txt)
-+ For Filebeat create [Filebeat Playbook](Elk-Stack-Project-1/Filebeat_Playbook)
-+ For Metricbeat create [Metricbeat Playbook](Elk-Stack-Project-1/Metricbeat_Playbook) and copy it to...
-+ /etc/ansible/
+ + For Ansible create [Initialization Playbook](./Elk-Stack-Project-1/Initialization_Playbook.yml)
+ + For Filebeat create [Filebeat Playbook](Elk-Stack-Project-1/Filebeat_Playbook.yml)
+ + For Metricbeat create [Metricbeat Playbook](Elk-Stack-Project-1/Metricbeat_Playbook.yml) and copy it to...
+ + /etc/ansible/
 
 * Which file do you update to make Ansible run the playbook on a specific machine? 
 
-+ /etc/ansible/hosts file (IP of the Virtual Machines)
+ + /etc/ansible/hosts file (IP of the Virtual Machines)
 
 * How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 
-+ There are two separate groups. The first will be on webservers (Web-1, Web-2) in etc/ansible/hosts file where Filebeat will be installed. The second group is the Elk server (Elk-jumpMachine ) where the main ELK components will be installed.
+ + There are two separate groups. The first will be on webservers (Web-1, Web-2) in etc/ansible/hosts file where Filebeat will be installed. The second group is the Elk server (Elk-jumpMachine ) where the main ELK components will be installed.
 
 * Which URL do you navigate to in order to check that the ELK server is running?
 
-+ http://20.110.181.202:5601//app/kibana
+ + http://20.110.181.202:5601//app/kibana
 
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
