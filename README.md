@@ -142,7 +142,7 @@ The playbook implements the following tasks:
          published_ports:
            - 5601:5601
            - 9200:9200
-	   - 5044:5044
+	       - 5044:5044
 	```
 	+ Enable Docker services to run 
 	```yaml
