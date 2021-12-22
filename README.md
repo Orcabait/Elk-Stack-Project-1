@@ -154,16 +154,16 @@ The playbook implements the following tasks:
 The following screenshot displays the result of running `docker ps -a` after successfully configuring the ELK instance.
 
 **Jump-Box**
-!(./Pictures/Jump-Box.png)
+![Jump-Box](./Pictures/Jump-Box.png)
 
 **Web-1**
-!(./Pictures/Web-1.png)
+![Web-1](./Pictures/Web-1.png)
 
 **Web-2**
-!(./Pictures/Web-2.png)
+![Web-2](./Pictures/Web-2.png)
 
 **ELK-box**
-!(./Pictures/ELK.box.png)
+![ELK-box](./Pictures/ELK.box.png)
 
 
 
