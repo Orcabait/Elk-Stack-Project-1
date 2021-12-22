@@ -257,7 +257,7 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 |`vim metricbeat-config.yml`                   |	create metricbeat config file and edit it
 |`vim metricbeat-playbook.yml`                 |	write YAML file to install metricbeat on webservers
 
-### Additional Resources 
+### Foundational Resources 
 Much has been learned leading up the implementation of this ELK stack project. Below are some previous projects that served as a cornerstone for essential skills used in this project. Please note that UBUNTU and KALI distributions are used. 
 
 * [Bash and Terminal](./FoundationalProjects/TerminalandBash.docx)
