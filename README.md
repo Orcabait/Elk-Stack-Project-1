@@ -163,7 +163,7 @@ The following screenshot displays the result of running `docker ps -a` after suc
 ![Web-2](./Pictures/Web-2.png)
 
 **ELK-box**
-![ELK-box](./Pictures/ELK.box.png)
+![ELK-box](./Pictures/ELK-box.png)
 
 
 
