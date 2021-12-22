@@ -260,10 +260,13 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 ### Additional Resources 
 Much has been learned leading up the implementation of this ELK stack project. Below are some previous projects that served as a cornerstone for essential skills used in this project. Please note that UBUNTU and KALI distributions are used. 
 
-* [Bash and Terminal](./FoundationalProjects/)
-* [Linux Systems Administration](./FoundationalProjects/Linux Systems Admin HW Martin Quiroga.pdf)
-* [Linux Archiving and Logging Data](./FoundationalProjects/Martin Quiroga Week 5 Homework_Archiving and Logging Data.pdf) 
-* [Advanced Bash Techniques](./FoundationalProjects/Week 6_Bash_Martin Quiroga.pdf)
-* [Networking Fundamentals 1](./FoundationalProjects/Wk 8_Networking Fundamentals MQ.pdf)
-* [Networking Fundamentals 2](./FoundationalProjects/Networking Fundamentals 2_MQ.pdf)
-* [Network Security Fundamentals]
+* [Bash and Terminal](./FoundationalProjects/TerminalandBash.docx)
+* [Linux Systems Administration](./FoundationalProjects/LinuxSystemsAdmin.docx)
+* [Linux Archiving and Logging Data](./FoundationalProjects/ArchivingandLoggingData.docx) 
+* [Advanced Bash Techniques](./FoundationalProjects/_AdvancedBash.docx)
+* [Networking Fundamentals 1](./FoundationalProjects/NetworkingFundamentals1.docx)
+* [Networking Fundamentals 2](./FoundationalProjects/NetworkingFundamentals2.docx)
+* [Network Security Fundamentals](./FoundationalProjects/NetworkSecurity.docx)
+
+Last update: 12/21/21 
+Cheers
